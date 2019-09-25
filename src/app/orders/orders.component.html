@@ -1,1 +1,33 @@
-<p>orders works!</p>
+<div style="text-align:center">
+  <h4>
+    Orders List
+  </h4>
+<div class="table-responsive">
+  <table class="table table-striped table-sm">
+    <thead class="thead-dark">
+      <tr>
+        <th>OrderId</th>
+        <th>UserId</th>
+        <th>OrderDate</th>
+        <th>Product Quantity</th>
+        <th>PaymentType</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of Orders | paginate: config" >
+        <td>{{order.OrderId}}</td>
+        <td>{{order.UserId}}</td>
+        <td>{{order.OrderDate}}</td>
+        <td>{{order.Products.Quantity}}</td>
+        <td>{{order.PaymentType}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+
+</div>
+
+
+
+
