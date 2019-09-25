@@ -29,5 +29,4 @@ export class OrdersComponent implements OnInit {
   pageChanged(event){
     this.config.currentPage = event;
   }
-
 }
