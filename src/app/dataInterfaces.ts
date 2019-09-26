@@ -14,7 +14,4 @@ export interface IOrders {
   PaymentType: string;
 }
 
-export interface IProducts {
-  ProductId: number;
-  Quantity: number;
-}
+

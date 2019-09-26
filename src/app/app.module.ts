@@ -12,6 +12,8 @@ import { OrdersComponent } from './orders/orders.component';
 import { DataService } from './data.service';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OrderDetailsComponent } from './orders/order-details/order-details.component';
+import { EditProductComponent } from './products/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     HomeComponent,
     ProductsComponent,
-    OrdersComponent
+    OrdersComponent,
+    OrderDetailsComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

@@ -17,11 +17,12 @@ export class OrdersComponent implements OnInit {
 
   ngOnInit() {
     this._dataService.getOrders().subscribe(value => {
+      console.log(value)
       this.Orders = value;
     });
 
     this.config = {
-      itemsPerPage: 15,
+      itemsPerPage: 20,
       currentPage: 1,
       totalItems: this.Orders.length
     };
