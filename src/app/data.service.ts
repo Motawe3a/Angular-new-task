@@ -21,4 +21,12 @@ export class DataService {
     );
     return this._http.get<IOrders[]>('./assets/data/Orders.json')
   }
+
+  getproduct(id: number): Observable<IProducts[]> {
+    return this._http.get<IProducts[]>('./assets/data/Products.json').pipe(map((value) => {
+        return value.filter(ele => {
+          return ele.ProductId === id;
+        });
+    }));
+  }
 }
