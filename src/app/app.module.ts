@@ -12,6 +12,7 @@ import { OrdersComponent } from './orders/orders.component';
 import { DataService } from './data.service';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditComponentComponent } from './products/edit-component/edit-component.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     HomeComponent,
     ProductsComponent,
-    OrdersComponent
+    OrdersComponent,
+    EditComponentComponent
   ],
   imports: [
     BrowserModule,

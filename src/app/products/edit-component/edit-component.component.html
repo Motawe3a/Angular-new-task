@@ -1,0 +1,34 @@
+<form #form="ngForm" (ngSubmit)="Save(form)">
+  <div class="form-group">
+    <label for="ProductName">Product Name</label>
+    <input
+    type="text"
+    class="form-control"
+    id="ProductName"
+    placeholder="Enter Product Name"
+    name="ProductName"
+    ngModel
+    [(ngModel)]="productDetail.ProductName">
+  </div>
+  <div class="form-group">
+    <label for="AvailablePieces">Available Pieces</label>
+    <input type="number"
+      class="form-control"
+      id="AvailablePieces"
+      placeholder="Available Pieces"
+      name="AvailablePieces"
+      ngModel
+      #AvailablePieces="ngModel"
+      [(ngModel)]="productDetail.AvailablePieces"
+      pattern="^[1-9]+[0-9]*$"
+      required>
+      <span style="color: red" class="help-block" *ngIf="!AvailablePieces.valid">must enter no. of pieces</span>
+  </div>
+
+  <button
+    [disabled]="!form.valid"
+    type="submit"
+    class="btn btn-primary"
+    (click)="onEdit()">Save</button>
+</form>
+
