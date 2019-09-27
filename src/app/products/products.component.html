@@ -1,6 +1,6 @@
 <div class="container" >
     <div class="row">
-        <div class="col-lg-4" *ngFor="let product of Products">
+        <div class="col-lg-4 cl-md-6 col-sm-12" *ngFor="let product of Products">
           <div class="card mb-4 box-shadow">
             <img class="card-img-top" data-src="{{product?.ProductImg}}" alt="Card image cap">
             <div class="card-body">
@@ -8,7 +8,10 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <!-- <button type="button" class="btn btn-sm btn-outline-primary">View</button>&nbsp; -->
-                  <button type="button" class="btn btn-sm btn-outline-danger" *ngIf="product.AvailablePieces < 50">Edit</button>
+                  <button type="button"
+                  class="btn btn-sm btn-outline-danger"
+                  *ngIf="product.AvailablePieces < 50"
+                  [routerLink]="['/products/edit', product.ProductId]" routerLinkActive="router-link-active" >Edit Available Pieces</button>
                 </div>
                 <small class="text-muted">Available Pieces {{product?.AvailablePieces}}</small>
               </div>
