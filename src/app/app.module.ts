@@ -12,7 +12,11 @@ import { OrdersComponent } from './orders/orders.component';
 import { DataService } from './data.service';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
 import { EditComponentComponent } from './products/edit-component/edit-component.component';
+import { OrderDetailComponent } from './orders/order-detail/order-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +25,8 @@ import { EditComponentComponent } from './products/edit-component/edit-component
     HomeComponent,
     ProductsComponent,
     OrdersComponent,
-    EditComponentComponent
+    EditComponentComponent,
+    OrderDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +34,9 @@ import { EditComponentComponent } from './products/edit-component/edit-component
     NgbModule,
     HttpClientModule,
     FormsModule, ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
 
 
   ],

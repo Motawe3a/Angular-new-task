@@ -1,14 +1,14 @@
 <form #form="ngForm" (ngSubmit)="Save(form)">
   <div class="form-group">
-    <label for="ProductName">Product Name</label>
+    <label for="ProductId">Product Id</label>
     <input
     type="text"
     class="form-control"
-    id="ProductName"
+    id="ProductId"
     placeholder="Enter Product Name"
-    name="ProductName"
+    name="ProductId"
     ngModel
-    [(ngModel)]="productDetail.ProductName">
+    [(ngModel)]="productDetail.ProductId">
   </div>
   <div class="form-group">
     <label for="AvailablePieces">Available Pieces</label>
@@ -21,7 +21,7 @@
       #AvailablePieces="ngModel"
       [(ngModel)]="productDetail.AvailablePieces"
       pattern="^[1-9]+[0-9]*$"
-      required>
+      min='1'>
       <span style="color: red" class="help-block" *ngIf="!AvailablePieces.valid">must enter no. of pieces</span>
   </div>
 

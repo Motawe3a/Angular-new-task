@@ -3,6 +3,7 @@ import { IProducts } from 'src/app/dataInterfaces';
 import { DataService } from 'src/app/data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-edit-component',
@@ -16,7 +17,7 @@ export class EditComponentComponent implements OnInit {
 
   constructor(private _dataService: DataService,
               private route: ActivatedRoute,
-              private router: Router) { }
+              private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.route.params.subscribe(r => {
@@ -36,7 +37,9 @@ export class EditComponentComponent implements OnInit {
   }
 
   onEdit() {
+    // in case of success sending the backend
     this.router.navigate(['/products']);
+    this.toastr.success('Successful', 'Edit Product', {timeOut: 2000});
   }
 
 
