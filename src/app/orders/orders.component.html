@@ -15,9 +15,9 @@
     </thead>
     <tbody>
       <tr *ngFor="let order of Orders | paginate: config" >
-        <td>{{order.OrderId}}</td>
+        <a [routerLink]="['/orders',order.OrderId]"><td>{{order.OrderId}}</td></a>
         <td>{{order.UserId}}</td>
-        <td>{{order.OrderDate}}</td>
+        <td>{{order.OrderDate | date:'short'}}</td>
         <td>{{order.Products[0].Quantity}}</td>
         <td>{{order.PaymentType}}</td>
       </tr>
@@ -25,9 +25,4 @@
   </table>
 </div>
 <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
-
 </div>
-
-
-
-
