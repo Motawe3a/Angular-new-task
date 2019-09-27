@@ -2,8 +2,9 @@
     <h3 class="card-header">OrderId: {{this.orderDetail[0].OrderId}}</h3>
     <div class="card-body">
       <h5 class="card-title">Payment Type: {{this.orderDetail[0].PaymentType}}</h5>
+      <p class="card-text">product quantity: {{this.orderDetail[0].Products[0].Quantity}}</p>
       <p class="card-text">Order Date: {{this.orderDetail[0].OrderDate | date:'short'}}</p>
-      <p class="card-text">Payment Type: {{this.orderDetail[0].PaymentType}}</p>
+      <p class="card-text">Customer id: {{this.orderDetail[0].UserId}}</p>
       <a [routerLink]="['/orders']" class="btn btn-primary">Go back</a>
     </div>
   </div>

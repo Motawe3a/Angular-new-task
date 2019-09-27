@@ -26,7 +26,6 @@ export class OrderDetailComponent implements OnInit {
         this.OrderId = +r.OrderId;
         this._dataService.getOrder(this.OrderId).subscribe(value => {
           this.orderDetail = value;
-          console.log(this.orderDetail[0])
           this.toastr.warning('order data only', 'show Order', {timeOut: 2000});
 
         });
