@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
+import { IProducts } from '../dataInterfaces';
 
 @Component({
   selector: 'app-orders',
@@ -8,7 +9,8 @@ import { DataService } from '../data.service';
 })
 export class OrdersComponent implements OnInit {
 
-  public Orders = [];
+  Orders = [];
+  Products: IProducts[];
 
   config: any;
 
@@ -17,6 +19,7 @@ export class OrdersComponent implements OnInit {
 
   ngOnInit() {
     this._dataService.getOrders().subscribe(value => {
+      console.log(value)
       this.Orders = value;
     });
 
