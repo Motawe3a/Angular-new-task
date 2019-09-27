@@ -19,9 +19,6 @@ export class DataService {
     const requestOptions = Object.assign(
       { responseType: 'json' },
     );
-
     return this._http.get<IOrders[]>('./assets/data/Orders.json')
-
-
   }
 }
