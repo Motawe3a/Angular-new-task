@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/data.service';
+import { DataService } from 'src/app/shared/data.service';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { IOrders } from 'src/app/dataInterfaces';
+import { IOrders } from 'src/app/shared/dataInterfaces';
 import { Location } from '@angular/common';
 
 @Component({

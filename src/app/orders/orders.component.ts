@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
-import { IProducts } from '../dataInterfaces';
+import { DataService } from '../shared/data.service';
+import { IProducts } from '../shared/dataInterfaces';
 
 @Component({
   selector: 'app-orders',

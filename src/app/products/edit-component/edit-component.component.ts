@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IProducts } from 'src/app/dataInterfaces';
-import { DataService } from 'src/app/data.service';
+import { IProducts } from 'src/app/shared/dataInterfaces';
+import { DataService } from 'src/app/shared/data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
@@ -15,7 +15,7 @@ export class EditComponentComponent implements OnInit {
   productDetail: IProducts;
   ProductId: number;
 
-  constructor(private _dataService: DataService,
+  constructor(private dataService: DataService,
               private route: ActivatedRoute,
               private router: Router, private toastr: ToastrService) { }
 
@@ -25,7 +25,7 @@ export class EditComponentComponent implements OnInit {
         // todo in case not find id
       } else {
         this.ProductId = +r.ProductId;
-        this._dataService.getproduct(this.ProductId).subscribe(value => {
+        this.dataService.getproduct(this.ProductId).subscribe(value => {
           this.productDetail = value[0];
         });
       }

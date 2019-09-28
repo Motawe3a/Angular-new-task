@@ -13,49 +13,31 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   getAllProducts(): Observable<IProducts[]> {
-    return this.http.get<IProducts[]>('./assets/data/Products.json', {responseType: 'json'})
-    .pipe(
-      retry(2),
-      catchError(this.handleError)
-    );
+    return this.http.get<IProducts[]>('./assets/data/Products.json', {responseType: 'json'});
   }
 
   getOrders(): Observable<IOrders[]> {
 
-    return this.http.get<IOrders[]>('./assets/data/Orders.json')
-    .pipe(
-      retry(2),
-      catchError(this.handleError)
-    );
+    return this.http.get<IOrders[]>('./assets/data/Orders.json');
   }
 
   getproduct(id: number): Observable<IProducts[]> {
     return this.http.get<IProducts[]>('./assets/data/Products.json').pipe(
-
-        retry(2),
         map((value) => {
           return value.filter(ele => {
             return ele.ProductId === id;
           });
         }),
-        catchError(this.handleError)
         );
   }
 
   getOrder(id: number): Observable<IOrders[]> {
     return this.http.get<IOrders[]>('./assets/data/Orders.json').pipe(
-        retry(2),
         map((value) => {
           return value.filter(ele => {
             return ele.OrderId === id;
           });
-        }),
-        catchError(this.handleError)
+        })
     );
-  }
-
-  handleError(error: HttpErrorResponse) {
-    // add any kind of message to return
-    return throwError(error);
   }
 }
