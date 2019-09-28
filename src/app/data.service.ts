@@ -55,7 +55,7 @@ export class DataService {
   }
 
   handleError(error: HttpErrorResponse) {
-    //add any kind of message to return
+    // add any kind of message to return
     return throwError(error);
   }
 }

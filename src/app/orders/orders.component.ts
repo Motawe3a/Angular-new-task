@@ -14,11 +14,11 @@ export class OrdersComponent implements OnInit {
 
   config: any;
 
-  constructor(private _dataService: DataService) {
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
-    this._dataService.getOrders().subscribe(value => {
+    this.dataService.getOrders().subscribe(value => {
       this.Orders = value;
     });
 
@@ -28,7 +28,7 @@ export class OrdersComponent implements OnInit {
       totalItems: this.Orders.length
     };
   }
-  pageChanged(event){
+  pageChanged(event) {
     this.config.currentPage = event;
   }
 }

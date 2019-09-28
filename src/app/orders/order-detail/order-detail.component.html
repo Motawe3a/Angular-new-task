@@ -5,6 +5,6 @@
       <p class="card-text">product quantity: {{this.orderDetail[0].Products[0].Quantity}}</p>
       <p class="card-text">Order Date: {{this.orderDetail[0].OrderDate | date:'short'}}</p>
       <p class="card-text">Customer id: {{this.orderDetail[0].UserId}}</p>
-      <a [routerLink]="['/orders']" class="btn btn-primary">Go back</a>
+      <a (click)="perviousPage()" class="btn btn-outline-primary"><span style="color: rgb(14, 50, 255)">Go back</span></a>
     </div>
   </div>
