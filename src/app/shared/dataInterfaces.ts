@@ -18,3 +18,12 @@ export interface IProducts {
   ProductId: number;
   Quantity: number;
 }
+
+export interface IUsers {
+  Id: number;
+  Name: string;
+  Email: string;
+  Phone: number;
+  Address: string;
+  RegisterDate: Date;
+}

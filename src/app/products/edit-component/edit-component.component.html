@@ -22,7 +22,8 @@
       #AvailablePieces="ngModel"
       [(ngModel)]="productDetail.AvailablePieces"
       pattern="^[1-9]+[0-9]*$"
-      min='1'>
+      min='1'
+      required>
       <span style="color: red" class="help-block" *ngIf="!AvailablePieces.valid">must enter no. of pieces</span>
   </div>
 

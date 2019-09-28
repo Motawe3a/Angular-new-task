@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse, HttpErrorResponse } from '@angular/common/http';
-import { IProducts, IOrders} from './dataInterfaces';
+import { IProducts, IOrders, IUsers} from './dataInterfaces';
 import { Observable } from 'rxjs/internal/Observable';
 import { map, catchError, retry } from 'rxjs/operators';
 import { throwError } from 'rxjs';
@@ -36,6 +36,16 @@ export class DataService {
         map((value) => {
           return value.filter(ele => {
             return ele.OrderId === id;
+          });
+        })
+    );
+  }
+
+  getUserDetails(id: number): Observable<IUsers[]> {
+    return this.http.get<IUsers[]>('./assets/data/Users.json').pipe(
+        map((value) => {
+          return value.filter(ele => {
+            return ele.Id === id;
           });
         })
     );
