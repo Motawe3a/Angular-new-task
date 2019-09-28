@@ -1,4 +1,8 @@
-# SoftecInternationaTask
+# Softec Internationa Task
+
+this Project simulate show some products and edit the ones has few quantity 
+also show all the orders and when click the id show the order details 
+the project has no backend related so there are three static files attached in asset folder to use them.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.5.
 
